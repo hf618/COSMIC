@@ -1,0 +1,12 @@
+# Configuration for COSMIC Hyperparameters
+
+# for Cache
+positive:
+  alpha: 2.0
+  beta: 7.0 
+
+# for MAC
+Mac:
+  lambda1: 0.69
+  lambda2: 0.20
+

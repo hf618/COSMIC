@@ -48,30 +48,7 @@ class AlignModel_custom(nn.Module):
         )
         
         return text_embeds
-    # def encode_image(self, image):
-    #     """编码图像，返回特征序列"""
 
-        
-    #     inputs = self.processor(images=image, return_tensors='pt', do_rescale=False).to(self.device)
-    #     outputs = self.vision_encoder(**inputs)
-        
-    #     return outputs.last_hidden_state  # 返回完整的特征序列
-        
-    # def encode_text(self, text):
-    #     if isinstance(text, str):
-    #         text = [text]
-            
-    #     # 添加 padding 和 truncation
-    #     inputs = self.processor(
-    #         text=text, 
-    #         padding=True,
-    #         truncation=True,
-    #         max_length=64,  # ALIGN 的最大文本长度
-    #         return_tensors='pt'
-    #     ).to(self.device)
-
-    #     outputs = self.text_encoder(**inputs)
-    #     return outputs.last_hidden_state[:, 0]  # 使用 [CLS] token 的特征
 
 class AlignFlex(nn.Module):
     """保持与原 ClipFlex 相同的接口"""
@@ -214,12 +191,7 @@ class AlignFlex(nn.Module):
     
 
     def get_image_features_aux(self, image):
-        # image torch.Size([bs, 3, 224, 224])
-        # image_features_vanilla = self.image_encoder(image.type(self.dtype))
-        ## for Res50 128*1024 or 128*50*1024 [global feat; 7*7 local feature]
-        ## for VIT,  128*512 or 128*197*512 [global feat; 14*14 local features]
 
-        # self.attn_score_dinov2 = self.dinov2.get_last_self_attention(image) # torch.Size([bs, num_head, 261, 261])
 
 
 
@@ -231,16 +203,10 @@ class AlignFlex(nn.Module):
         x_norm_clstoken = x_norm_clstoken.unsqueeze(1)  # 形状：[128, 1, 1024]
         image_features = torch.cat([x_norm_clstoken, x_norm_regtokens, x_norm_patchtokens], dim=1)
 
-        # image_features = image_features / image_features.norm(dim=-1, keepdim=True)  # torch.Size([32, 197, 512])
-        # ipdb.set_trace()
         self.image_features_aux_gllo = image_features / image_features.norm(dim=-1, keepdim=True)
 
         self.image_features_local_aux = x_norm_patchtokens / x_norm_patchtokens.norm(dim=-1, keepdim=True)  # torch.Size([32, 196, 512]) 代表每个patches 的特征
 
-
-        # self.image_features_global, sim_matrix = compute_weighted_global_feature(image_features_local, image_features_global)
-
-        # ipdb.set_trace()
         return self.image_features_global_aux, self.image_features_local_aux
     
 

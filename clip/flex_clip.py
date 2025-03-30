@@ -7,7 +7,6 @@ import torch.nn as nn
 import torch.nn.functional as F
 
 from clip import load, tokenize
-from clip import load_dino
 from clip import load_dinov2
 from .simple_tokenizer import SimpleTokenizer as _Tokenizer
 from data.imagnet_prompts import imagenet_classes, imagenet_templates, tip_imagenet_templates, simple_imagenet_template, \
@@ -1180,8 +1179,7 @@ class ClipFlex(nn.Module):
             return self.inference(input)
 
 
-def get_flex_clip(args, clip_arch, classnames, device, n_ctx, ctx_init, learned_cls=False, memory_size=10,
-                  text_prompt='tip'):
+def get_flex_clip(args, clip_arch, classnames, device, n_ctx, ctx_init, learned_cls=False, memory_size=10, text_prompt='tip'):
     model = ClipFlex(args, device, classnames, None, arch=clip_arch, n_ctx=n_ctx, ctx_init=ctx_init,
                      learned_cls=learned_cls,
                      memory_size=memory_size, text_prompt=text_prompt)
