@@ -36,3 +36,30 @@
         This repository is the official PyTorch implementation of "COSMIC: Clique-Oriented Semantic Multi-space Integration for Robust CLIP Test-Time Adaptation".
     </h4>
 </div>
+
+## Environment Setting
+To run this project, you need to set up your environment as follows:
+```bash
+conda create -n COSMIC python=3.10 -y
+conda activate COSMIC
+pip install -r requirements.txt
+```
+## Dataset
+For both Out-of-Distribution and Cross-Domain benchmarks, please refer to [this page](https://github.com/azshue/TPT).
+
+## Run COSMIC
+To execute the COSMIC, navigate to the `scripts` directory.
+
+#### OOD Benchmark
+Run COSMIC on the OOD Benchmark:
+```
+bash ./scripts/cosmic_ood.sh
+```
+
+#### Cross-Domain Benchmark
+Run COSMIC on the Cross-Domain Benchmark:
+```
+bash ./scripts/cosmic_cd.sh
+```
+
+
