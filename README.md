@@ -28,6 +28,9 @@
         <a href="https://hf618.github.io/COSMIC_Project/" target='_blank'>
         <img src="https://img.shields.io/badge/🐳-Project%20Page-blue">
         </a>
+        <a href="https://arxiv.org/abs/2503.23388" target='_blank'>
+        <img src="https://img.shields.io/badge/arXiv-2412.11365-b31b1b.svg">
+        </a>
         <img alt="GitHub Repo stars" src="https://img.shields.io/github/stars/hf618/COSMIC">
     </h4>
 </div>
