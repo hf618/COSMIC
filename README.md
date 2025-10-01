@@ -67,5 +67,19 @@ Run COSMIC on the Cross-Domain Benchmark:
 ```
 bash ./scripts/cosmic_cd.sh
 ```
-
+<p style="padding: 15px"></p>
+<section class="section" id="BibTeX">
+  <div class="container is-max-desktop content">
+    <h2 class="title">BibTeX</h2>
+    <pre><code>@misc{huang2025cosmiccliqueorientedsemanticmultispace,
+      title={COSMIC: Clique-Oriented Semantic Multi-space Integration for Robust CLIP Test-Time Adaptation}, 
+      author={Fanding Huang and Jingyan Jiang and Qinting Jiang and Hebei Li and Faisal Nadeem Khan and Zhi Wang},
+      year={2025},
+      eprint={2503.23388},
+      archivePrefix={arXiv},
+      primaryClass={cs.CV},
+      url={https://arxiv.org/abs/2503.23388}, 
+}</code></pre>
+  </div>
+</section>
 
