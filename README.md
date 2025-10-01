@@ -71,14 +71,12 @@ bash ./scripts/cosmic_cd.sh
 <section class="section" id="BibTeX">
   <div class="container is-max-desktop content">
     <h2 class="title">BibTeX</h2>
-    <pre><code>@misc{huang2025cosmiccliqueorientedsemanticmultispace,
-      title={COSMIC: Clique-Oriented Semantic Multi-space Integration for Robust CLIP Test-Time Adaptation}, 
-      author={Fanding Huang and Jingyan Jiang and Qinting Jiang and Hebei Li and Faisal Nadeem Khan and Zhi Wang},
-      year={2025},
-      eprint={2503.23388},
-      archivePrefix={arXiv},
-      primaryClass={cs.CV},
-      url={https://arxiv.org/abs/2503.23388}, 
+    <pre><code>@inproceedings{huang2025cosmic,
+  title={COSMIC: Clique-Oriented Semantic Multi-space Integration for Robust CLIP Test-Time Adaptation},
+  author={Huang, Fanding and Jiang, Jingyan and Jiang, Qinting and Li, Hebei and Khan, Faisal Nadeem and Wang, Zhi},
+  booktitle={Proceedings of the Computer Vision and Pattern Recognition Conference},
+  pages={9772--9781},
+  year={2025}
 }</code></pre>
   </div>
 </section>
